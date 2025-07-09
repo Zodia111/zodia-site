@@ -8,7 +8,7 @@
   <h1>Welcome to Zodia Readings</h1>
   <p>Your live chat is loading...</p>
 
-  <!-- Start of LiveAgent integration script: Invitations -->
+  <!-- Start of LiveAgent integration script: Chat button -->
   <script type="text/javascript">
     (function(d, src, c) {
       var t = d.scripts[d.scripts.length - 1],
@@ -18,13 +18,15 @@
       s.src = src;
       s.onload = s.onreadystatechange = function() {
         var rs = this.readyState;
-        if (rs && rs != 'complete' && rs != 'loaded') return;
+        if (rs && rs !== 'complete' && rs !== 'loaded') return;
         c(this);
       };
       t.parentElement.insertBefore(s, t.nextSibling);
     })(document,
     'https://zodiareadings.ladesk.com/scripts/track.js',
-    function(e) {});
+    function(e) {
+      LiveAgent.createButton('mke240pb', e);
+    });
   </script>
   <!-- End of LiveAgent integration script -->
 </body>
